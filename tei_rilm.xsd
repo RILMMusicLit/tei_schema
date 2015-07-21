@@ -3,7 +3,7 @@
   <xs:import namespace="http://www.isocat.org/ns/dcr" schemaLocation="dcr.xsd"/>
   <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
   <!--
-    Schema generated from ODD source 2015-03-03T19:00:15Z. .
+    Schema generated from ODD source 2015-03-19T01:44:10Z. .
     TEI Edition: Version 2.7.0. Last updated on
     	16th September 2014, revision 13036
     TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.7.0/
@@ -1980,42 +1980,42 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
     <xs:choice>
       <xs:element ref="ns1:quote"/>
       <xs:element ref="ns1:cit"/>
-      <xs:element ref="ns1:incipit"/>
+      <xs:group ref="ns1:rilmteiincipit"/>
     </xs:choice>
   </xs:group>
   <xs:group name="rilmteimodel.quoteLike_alternation">
     <xs:choice>
       <xs:element ref="ns1:quote"/>
       <xs:element ref="ns1:cit"/>
-      <xs:element ref="ns1:incipit"/>
+      <xs:group ref="ns1:rilmteiincipit"/>
     </xs:choice>
   </xs:group>
   <xs:group name="rilmteimodel.quoteLike_sequence">
     <xs:sequence>
       <xs:element ref="ns1:quote"/>
       <xs:element ref="ns1:cit"/>
-      <xs:element ref="ns1:incipit"/>
+      <xs:group ref="ns1:rilmteiincipit"/>
     </xs:sequence>
   </xs:group>
   <xs:group name="rilmteimodel.quoteLike_sequenceOptional">
     <xs:sequence>
       <xs:element minOccurs="0" ref="ns1:quote"/>
       <xs:element minOccurs="0" ref="ns1:cit"/>
-      <xs:element minOccurs="0" ref="ns1:incipit"/>
+      <xs:group minOccurs="0" ref="ns1:rilmteiincipit"/>
     </xs:sequence>
   </xs:group>
   <xs:group name="rilmteimodel.quoteLike_sequenceOptionalRepeatable">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:quote"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:cit"/>
-      <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:incipit"/>
+      <xs:group minOccurs="0" maxOccurs="unbounded" ref="ns1:rilmteiincipit"/>
     </xs:sequence>
   </xs:group>
   <xs:group name="rilmteimodel.quoteLike_sequenceRepeatable">
     <xs:sequence>
       <xs:element maxOccurs="unbounded" ref="ns1:quote"/>
       <xs:element maxOccurs="unbounded" ref="ns1:cit"/>
-      <xs:element maxOccurs="unbounded" ref="ns1:incipit"/>
+      <xs:group maxOccurs="unbounded" ref="ns1:rilmteiincipit"/>
     </xs:sequence>
   </xs:group>
   <xs:group name="rilmteimodel.qLike">
@@ -2209,6 +2209,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
       <xs:element ref="ns1:edition"/>
       <xs:element ref="ns1:extent"/>
       <xs:element ref="ns1:availability"/>
+      <xs:group ref="ns1:rilmteiincipit"/>
       <xs:element ref="ns1:rismSiglum"/>
     </xs:choice>
   </xs:group>
@@ -4009,13 +4010,25 @@ Sample values include: 1] authors; 2] bio; 3] contents; 4] criticism; 5] heading
     <xs:annotation>
       <xs:documentation>contains one cell of a table. [14.1.1. ]</xs:documentation>
     </xs:annotation>
-    <xs:complexType>
-      <xs:complexContent>
-        <xs:extension base="ns1:rilmteimacro.specialPara">
-          <xs:attributeGroup ref="ns1:rilmteiatt.global.attributes"/>
-          <xs:attributeGroup ref="ns1:rilmteiatt.tableDecoration.attributes"/>
-        </xs:extension>
-      </xs:complexContent>
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:group ref="ns1:rilmteimodel.highlighted"/>
+        <xs:group ref="ns1:rilmteimodel.pPart.data"/>
+        <xs:group ref="ns1:rilmteimodel.pPart.edit"/>
+        <xs:group ref="ns1:rilmteimodel.segLike"/>
+        <xs:group ref="ns1:rilmteimodel.ptrLike"/>
+        <xs:group ref="ns1:rilmteimodel.biblPart"/>
+        <xs:group ref="ns1:rilmteimodel.global"/>
+        <xs:element ref="ns1:graphic"/>
+        <xs:element ref="ns1:l"/>
+        <xs:element ref="ns1:lg"/>
+        <xs:element ref="ns1:list"/>
+        <xs:element ref="ns1:media"/>
+        <xs:element ref="ns1:p"/>
+        <xs:element ref="ns1:quote"/>
+      </xs:choice>
+      <xs:attributeGroup ref="ns1:rilmteiatt.global.attributes"/>
+      <xs:attributeGroup ref="ns1:rilmteiatt.tableDecoration.attributes"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="formula">
@@ -6150,20 +6163,24 @@ Sample values include: 1] first-line; 2] first-letter; 3] before; 4] after</xs:d
       </xs:annotation>
     </xs:attribute>
   </xs:attributeGroup>
-  <xs:element name="incipit">
-    <xs:annotation>
-      <xs:documentation>contains the incipit of a manuscript item, that is the opening words of the text proper, exclusive of any rubric which might precede it, of sufficient length to identify the work uniquely; such incipits were, in former times, frequently used a means of reference to a work, in place of a title. [10.6.1. ]</xs:documentation>
-    </xs:annotation>
-    <xs:complexType>
-      <xs:complexContent>
-        <xs:extension base="ns1:rilmteimacro.phraseSeq">
-          <xs:attributeGroup ref="ns1:rilmteiatt.global.attributes"/>
-          <xs:attributeGroup ref="ns1:rilmteiatt.msExcerpt.attributes"/>
-          <xs:attributeGroup ref="ns1:rilmteiatt.typed.attributes"/>
-        </xs:extension>
-      </xs:complexContent>
-    </xs:complexType>
-  </xs:element>
+  <xs:group name="rilmteiincipit">
+    <xs:sequence>
+      <xs:element name="incipit" form="unqualified">
+        <xs:annotation>
+          <xs:documentation>contains the incipit of a manuscript item, that is the opening words of the text proper, exclusive of any rubric which might precede it, of sufficient length to identify the work uniquely; such incipits were, in former times, frequently used a means of reference to a work, in place of a title. [10.6.1. ]</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="ns1:rilmteimacro.phraseSeq">
+              <xs:attributeGroup ref="ns1:rilmteiatt.global.attributes"/>
+              <xs:attributeGroup ref="ns1:rilmteiatt.msExcerpt.attributes"/>
+              <xs:attributeGroup ref="ns1:rilmteiatt.typed.attributes"/>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
   <xs:element name="opus">
     <xs:annotation>
       <xs:documentation>Contains a catalog number for a musical work, such as "op. 6" or "K.467" The particular catalog used can be specified in the type attribute.</xs:documentation>
