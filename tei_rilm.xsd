@@ -3,7 +3,7 @@
   <xs:import namespace="http://www.isocat.org/ns/dcr" schemaLocation="dcr.xsd"/>
   <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
   <!--
-    Schema generated from ODD source 2015-05-04T16:55:16Z. .
+    Schema generated from ODD source 2015-05-05T21:18:42Z. .
     TEI Edition: Version 2.8.0. Last updated on
     	6th April 2015, revision 13197
     TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.8.0/
@@ -3218,7 +3218,6 @@ Licensing, etc. 2.5. The Revision Description 3.11.2.4. Imprint, Size of a Docum
       <xs:attributeGroup ref="ns1:rilmteiatt.global.attribute.n"/>
       <xs:attributeGroup ref="ns1:rilmteiatt.global.attribute.xmllang"/>
       <xs:attributeGroup ref="ns1:rilmteiatt.global.rendition.attribute.rend"/>
-      <xs:attributeGroup ref="ns1:rilmteiatt.datable.attribute.calendar"/>
       <xs:attributeGroup ref="ns1:rilmteiatt.datable.attribute.period"/>
       <xs:attributeGroup ref="ns1:rilmteiatt.datable.w3c.attribute.when"/>
       <xs:attributeGroup ref="ns1:rilmteiatt.datable.w3c.attribute.notBefore"/>
@@ -3241,6 +3240,17 @@ Licensing, etc. 2.5. The Revision Description 3.11.2.4. Imprint, Size of a Docum
       <xs:attributeGroup ref="ns1:rilmteiatt.ranging.attribute.max"/>
       <xs:attributeGroup ref="ns1:rilmteiatt.source.attribute.source"/>
       <xs:attributeGroup ref="ns1:rilmteiatt.typed.attribute.delivery"/>
+      <xs:attribute name="calendar">
+        <xs:annotation>
+          <xs:documentation>indicates the system or calendar to which the date represented by the content of this element belongs.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="julian"/>
+            <xs:enumeration value="gregorian"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
       <xs:attribute name="type" type="ns1:rilmteidata.enumerated">
         <xs:annotation>
           <xs:documentation>characterizes the element in some sense, using any convenient classification scheme or typology. 
