@@ -3,11 +3,11 @@
   <xs:import namespace="http://www.isocat.org/ns/dcr" schemaLocation="dcr.xsd"/>
   <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
   <!--
-    Schema generated from ODD source 2015-07-10T21:27:26Z. .
+    Schema generated from ODD source 2015-07-10T21:30:46Z. .
     TEI Edition: Version 2.8.0. Last updated on
     	6th April 2015, revision 13197
     TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.8.0/
-    RILM TEI Version 1.0.6
+    
   -->
   <!---->
   <xs:complexType name="rilmteimacro.paraContent" mixed="true">
@@ -4309,6 +4309,7 @@ Licensing, etc.]</xs:documentation>
       <xs:attributeGroup ref="ns1:rilmteiatt.global.attribute.xmllang"/>
       <xs:attributeGroup ref="ns1:rilmteiatt.global.attribute.xmlspace"/>
       <xs:attributeGroup ref="ns1:rilmteiatt.global.rendition.attribute.style"/>
+      <xs:attributeGroup ref="ns1:rilmteiatt.global.linking.attribute.corresp"/>
       <xs:attributeGroup ref="ns1:rilmteiatt.global.facs.attribute.facs"/>
       <xs:attributeGroup ref="ns1:rilmteiatt.global.responsibility.attribute.cert"/>
       <xs:attributeGroup ref="ns1:rilmteiatt.global.responsibility.attribute.resp"/>
