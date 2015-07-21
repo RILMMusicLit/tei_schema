@@ -3,7 +3,7 @@
   <xs:import namespace="http://www.isocat.org/ns/dcr" schemaLocation="dcr.xsd"/>
   <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
   <!--
-    Schema generated from ODD source 2015-07-10T21:30:46Z. .
+    Schema generated from ODD source 2015-07-21T20:24:33Z. .
     TEI Edition: Version 2.8.0. Last updated on
     	6th April 2015, revision 13197
     TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.8.0/
@@ -2250,42 +2250,42 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
     <xs:choice>
       <xs:element ref="ns1:quote"/>
       <xs:element ref="ns1:cit"/>
-      <xs:group ref="ns1:rilmteiincipit"/>
+      <xs:element ref="ns1:incipit"/>
     </xs:choice>
   </xs:group>
   <xs:group name="rilmteimodel.quoteLike_alternation">
     <xs:choice>
       <xs:element ref="ns1:quote"/>
       <xs:element ref="ns1:cit"/>
-      <xs:group ref="ns1:rilmteiincipit"/>
+      <xs:element ref="ns1:incipit"/>
     </xs:choice>
   </xs:group>
   <xs:group name="rilmteimodel.quoteLike_sequence">
     <xs:sequence>
       <xs:element ref="ns1:quote"/>
       <xs:element ref="ns1:cit"/>
-      <xs:group ref="ns1:rilmteiincipit"/>
+      <xs:element ref="ns1:incipit"/>
     </xs:sequence>
   </xs:group>
   <xs:group name="rilmteimodel.quoteLike_sequenceOptional">
     <xs:sequence>
       <xs:element minOccurs="0" ref="ns1:quote"/>
       <xs:element minOccurs="0" ref="ns1:cit"/>
-      <xs:group minOccurs="0" ref="ns1:rilmteiincipit"/>
+      <xs:element minOccurs="0" ref="ns1:incipit"/>
     </xs:sequence>
   </xs:group>
   <xs:group name="rilmteimodel.quoteLike_sequenceOptionalRepeatable">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:quote"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:cit"/>
-      <xs:group minOccurs="0" maxOccurs="unbounded" ref="ns1:rilmteiincipit"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:incipit"/>
     </xs:sequence>
   </xs:group>
   <xs:group name="rilmteimodel.quoteLike_sequenceRepeatable">
     <xs:sequence>
       <xs:element maxOccurs="unbounded" ref="ns1:quote"/>
       <xs:element maxOccurs="unbounded" ref="ns1:cit"/>
-      <xs:group maxOccurs="unbounded" ref="ns1:rilmteiincipit"/>
+      <xs:element maxOccurs="unbounded" ref="ns1:incipit"/>
     </xs:sequence>
   </xs:group>
   <xs:group name="rilmteimodel.qLike">
@@ -2481,7 +2481,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
       <xs:element ref="ns1:edition"/>
       <xs:element ref="ns1:extent"/>
       <xs:element ref="ns1:availability"/>
-      <xs:group ref="ns1:rilmteiincipit"/>
+      <xs:element ref="ns1:incipit"/>
       <xs:element ref="ns1:rismSiglum"/>
     </xs:choice>
   </xs:group>
@@ -4785,6 +4785,8 @@ Mathematical Expressions]</xs:documentation>
           <xs:attributeGroup ref="ns1:rilmteiatt.global.rendition.attribute.rend"/>
           <xs:attributeGroup ref="ns1:rilmteiatt.global.linking.attribute.corresp"/>
           <xs:attributeGroup ref="ns1:rilmteiatt.segLike.attribute.function"/>
+          <xs:attributeGroup ref="ns1:rilmteiatt.datcat.attribute.datcat"/>
+          <xs:attributeGroup ref="ns1:rilmteiatt.datcat.attribute.valueDatcat"/>
           <xs:attributeGroup ref="ns1:rilmteiatt.typed.attributes"/>
         </xs:extension>
       </xs:complexContent>
@@ -6875,24 +6877,20 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
       </xs:annotation>
     </xs:attribute>
   </xs:attributeGroup>
-  <xs:group name="rilmteiincipit">
-    <xs:sequence>
-      <xs:element name="incipit" form="unqualified">
-        <xs:annotation>
-          <xs:documentation>contains the incipit of a manuscript item, that is the opening words of the text proper, exclusive of any rubric which might precede it, of sufficient length to identify the work uniquely; such incipits were, in former times, frequently used a means of reference to a work, in place of a title. [10.6.1. The msItem and msItemStruct Elements]</xs:documentation>
-        </xs:annotation>
-        <xs:complexType>
-          <xs:complexContent>
-            <xs:extension base="ns1:rilmteimacro.phraseSeq">
-              <xs:attributeGroup ref="ns1:rilmteiatt.global.attributes"/>
-              <xs:attributeGroup ref="ns1:rilmteiatt.msExcerpt.attributes"/>
-              <xs:attributeGroup ref="ns1:rilmteiatt.typed.attributes"/>
-            </xs:extension>
-          </xs:complexContent>
-        </xs:complexType>
-      </xs:element>
-    </xs:sequence>
-  </xs:group>
+  <xs:element name="incipit">
+    <xs:annotation>
+      <xs:documentation>contains the incipit of a manuscript item, that is the opening words of the text proper, exclusive of any rubric which might precede it, of sufficient length to identify the work uniquely; such incipits were, in former times, frequently used a means of reference to a work, in place of a title. [10.6.1. The msItem and msItemStruct Elements]</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="ns1:rilmteimacro.phraseSeq">
+          <xs:attributeGroup ref="ns1:rilmteiatt.global.attributes"/>
+          <xs:attributeGroup ref="ns1:rilmteiatt.msExcerpt.attributes"/>
+          <xs:attributeGroup ref="ns1:rilmteiatt.typed.attributes"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="g">
     <xs:annotation>
       <xs:documentation>(character or glyph) represents a glyph, or a non-standard character. [5. Characters, Glyphs, and Writing Modes]</xs:documentation>
