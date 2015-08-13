@@ -3,7 +3,7 @@
   <xs:import namespace="http://www.isocat.org/ns/dcr" schemaLocation="dcr.xsd"/>
   <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
   <!--
-    Schema generated from ODD source 2015-07-23T22:15:36Z. .
+    Schema generated from ODD source 2015-08-13T17:13:10Z. .
     TEI Edition: Version 2.8.0. Last updated on
     	6th April 2015, revision 13197
     TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.8.0/
@@ -617,7 +617,23 @@ Suggested values include: 1] internal; 2] external; 3] conjecture</xs:documentat
       <xs:simpleType>
         <xs:restriction>
           <xs:simpleType>
-            <xs:list itemType="ns1:rilmteidata.word"/>
+            <xs:list>
+              <xs:simpleType>
+                <xs:restriction base="xs:token">
+                  <xs:enumeration value="italic"/>
+                  <xs:enumeration value="underline"/>
+                  <xs:enumeration value="bold"/>
+                  <xs:enumeration value="uppercase"/>
+                  <xs:enumeration value="sup"/>
+                  <xs:enumeration value="sub"/>
+                  <xs:enumeration value="smallcaps"/>
+                  <xs:enumeration value="roman"/>
+                  <xs:enumeration value="diagstrike"/>
+                  <xs:enumeration value="tie"/>
+                  <xs:enumeration value="letter-spaced"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:list>
           </xs:simpleType>
           <xs:minLength value="1"/>
         </xs:restriction>
@@ -2854,37 +2870,9 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
       <xs:complexContent>
         <xs:extension base="ns1:rilmteimacro.paraContent">
           <xs:attributeGroup ref="ns1:rilmteiatt.global.attribute.xmllang"/>
+          <xs:attributeGroup ref="ns1:rilmteiatt.global.rendition.attribute.rend"/>
           <xs:attributeGroup ref="ns1:rilmteiatt.global.responsibility.attribute.cert"/>
           <xs:attributeGroup ref="ns1:rilmteiatt.global.responsibility.attribute.resp"/>
-          <xs:attribute name="rend">
-            <xs:annotation>
-              <xs:documentation>(rendition) indicates how the element in question was rendered or presented in the source text.</xs:documentation>
-            </xs:annotation>
-            <xs:simpleType>
-              <xs:restriction>
-                <xs:simpleType>
-                  <xs:list>
-                    <xs:simpleType>
-                      <xs:restriction base="xs:token">
-                        <xs:enumeration value="italic"/>
-                        <xs:enumeration value="underline"/>
-                        <xs:enumeration value="bold"/>
-                        <xs:enumeration value="uppercase"/>
-                        <xs:enumeration value="sup"/>
-                        <xs:enumeration value="sub"/>
-                        <xs:enumeration value="smallcaps"/>
-                        <xs:enumeration value="roman"/>
-                        <xs:enumeration value="diagstrike"/>
-                        <xs:enumeration value="tie"/>
-                        <xs:enumeration value="letter-spaced"/>
-                      </xs:restriction>
-                    </xs:simpleType>
-                  </xs:list>
-                </xs:simpleType>
-                <xs:minLength value="1"/>
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:attribute>
         </xs:extension>
       </xs:complexContent>
     </xs:complexType>
