@@ -7,7 +7,7 @@
     TEI Edition: Version 2.8.0. Last updated on
     	6th April 2015, revision 13197
     TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.8.0/
-    
+    Version 1.0.8
   -->
   <!---->
   <xs:complexType name="rilmteimacro.paraContent" mixed="true">
