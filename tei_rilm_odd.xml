@@ -459,6 +459,13 @@
 						<attDef ident="synch" mode="delete"/>
 						<attDef ident="xml:base" mode="delete"/>
 						<attDef ident="xml:space" mode="delete"/>
+						<attDef ident="type" mode="change">
+							<desc>indicates whether an author actively contributed to the current version of a document.</desc>
+							<valList type="closed">
+								<valItem ident="active"/>
+								<valItem ident="inactive"/>
+							</valList>
+						</attDef>
 					</attList>
 				</elementSpec>
 				<elementSpec ident="front" mode="change" module="textstructure">
@@ -1144,6 +1151,20 @@
 						<attDef ident="xml:base" mode="delete"/>
 						<attDef ident="xml:lang" mode="delete"/>
 						<attDef ident="xml:space" mode="delete"/>
+						<attDef ident="rend" mode="change">
+							<valList type="open" mode="replace">
+								<valItem ident="list"/>
+								<valItem ident="inline"/>
+								<valItem ident="bulleted"/>
+								<valItem ident="numbered"/>
+								<valItem ident="lower-latin"/>
+								<valItem ident="lower-greek"/>
+								<valItem ident="lower-roman"/>
+								<valItem ident="upper-latin"/>
+								<valItem ident="upper-greek"/>
+								<valItem ident="upper-roman"/>
+							</valList>
+						</attDef>
 					</attList>
 				</elementSpec>
 				<elementSpec ident="media" mode="change" module="core">

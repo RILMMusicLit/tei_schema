@@ -3,11 +3,11 @@
   <xs:import namespace="http://www.isocat.org/ns/dcr" schemaLocation="dcr.xsd"/>
   <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
   <!--
-    Schema generated from ODD source 2015-10-22T19:28:59Z. .
+    Schema generated from ODD source 2015-11-23T21:12:11Z. .
     TEI Edition: Version 2.9.1. Last updated on
     	15th October 2015, revision 46ac023
     TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.9.1/
-    RILM Version 1.0.9
+    
   -->
   <!---->
   <xs:complexType name="rilmteimacro.paraContent" mixed="true">
@@ -2135,6 +2135,8 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
       <xs:element ref="ns1:birth"/>
       <xs:element ref="ns1:death"/>
       <xs:element ref="ns1:idno"/>
+      <xs:element ref="ns1:baptism"/>
+      <xs:element ref="ns1:burial"/>
     </xs:choice>
   </xs:group>
   <xs:group name="rilmteimodel.placeNamePart">
@@ -3341,11 +3343,24 @@ Sample values include: 1] comp; 2] pub; 3] copyright</xs:documentation>
       </xs:sequence>
       <xs:attributeGroup ref="ns1:rilmteiatt.global.attribute.xmlid"/>
       <xs:attributeGroup ref="ns1:rilmteiatt.global.attribute.n"/>
-      <xs:attributeGroup ref="ns1:rilmteiatt.global.rendition.attribute.rend"/>
       <xs:attributeGroup ref="ns1:rilmteiatt.global.responsibility.attribute.cert"/>
       <xs:attributeGroup ref="ns1:rilmteiatt.global.responsibility.attribute.resp"/>
       <xs:attributeGroup ref="ns1:rilmteiatt.typed.attribute.delivery"/>
       <xs:attributeGroup ref="ns1:rilmteiatt.typed.attribute.subtype"/>
+      <xs:attribute name="rend">
+        <xs:annotation>
+          <xs:documentation>(rendition) indicates how the element in question was rendered or presented in the source text.
+Sample values include: 1] list; 2] inline; 3] bulleted; 4] numbered; 5] lower-latin; 6] lower-greek; 7] lower-roman; 8] upper-latin; 9] upper-greek; 10] upper-roman</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction>
+            <xs:simpleType>
+              <xs:list itemType="ns1:rilmteidata.word"/>
+            </xs:simpleType>
+            <xs:minLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
       <xs:attribute name="type">
         <xs:annotation>
           <xs:documentation>describes the nature of the items in the list.
@@ -7147,6 +7162,21 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
       <xs:attributeGroup ref="ns1:rilmteiatt.global.attributes"/>
     </xs:complexType>
   </xs:element>
+  <xs:element name="baptism">
+    <xs:annotation>
+      <xs:documentation>contains information about a person's baptism, such as its date and place.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="ns1:rilmteimacro.phraseSeq">
+          <xs:attributeGroup ref="ns1:rilmteiatt.datable.attributes"/>
+          <xs:attributeGroup ref="ns1:rilmteiatt.editLike.attributes"/>
+          <xs:attributeGroup ref="ns1:rilmteiatt.global.attributes"/>
+          <xs:attributeGroup ref="ns1:rilmteiatt.naming.attributes"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="rilmPerson">
     <xs:annotation>
       <xs:documentation>contains biographical information about a person. May contain a mix of text and elements.</xs:documentation>
@@ -7239,6 +7269,21 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
       <xs:group minOccurs="0" maxOccurs="unbounded" ref="ns1:rilmteimodel.highlighted"/>
       <xs:attributeGroup ref="ns1:rilmteiatt.global.attributes"/>
       <xs:attributeGroup ref="ns1:rilmteiatt.typed.attributes"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="burial">
+    <xs:annotation>
+      <xs:documentation>contains information about a person's burial, such as its date and place.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="ns1:rilmteimacro.phraseSeq">
+          <xs:attributeGroup ref="ns1:rilmteiatt.datable.attributes"/>
+          <xs:attributeGroup ref="ns1:rilmteiatt.editLike.attributes"/>
+          <xs:attributeGroup ref="ns1:rilmteiatt.global.attributes"/>
+          <xs:attributeGroup ref="ns1:rilmteiatt.naming.attributes"/>
+        </xs:extension>
+      </xs:complexContent>
     </xs:complexType>
   </xs:element>
   <xs:element name="tableFigure">
