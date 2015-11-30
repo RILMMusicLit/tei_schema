@@ -1888,6 +1888,7 @@
 							<desc>characterizes the type of organization or the type of name. Use "uni" for any post-secondary educational institution.</desc>
 							<valList type="closed" mode="replace">
 								<valItem ident="alt"/>
+								<valItem ident="festival"/>
 								<valItem ident="performing"/>
 								<valItem ident="uni"/>
 								<valItem ident=" performing-alt"/>
