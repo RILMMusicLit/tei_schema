@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
+	xml:lang="en">
 	<teiHeader>
 		<fileDesc>
 			<titleStmt>
@@ -32,6 +33,8 @@
 				<moduleRef
 					except="argument closer dateline div1 div2 div3 div4 div5 div6 div7 docDate docEdition docImprint docTitle epigraph floatingText group imprimatur opener postscript salute signed titlePage titlePart trailer"
 					key="textstructure"/>
+				<moduleRef
+					url="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/mathml2-main.rng"/>
 				<moduleRef except="" key="figures"/>
 				<moduleRef except="alt altGrp anchor join joinGrp link linkGrp timeline when"
 					key="linking"/>
@@ -1907,6 +1910,11 @@
 						</attDef>
 					</attList>
 				</elementSpec>
+				<elementSpec module="figures" ident="formula" mode="change">
+					<content>
+						<rng:ref name="mathml.math"/>
+					</content>
+				</elementSpec>
 				<elementSpec ident="notatedMusic" mode="change" module="figures">
 					<content>
 						<zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0">
@@ -2139,7 +2147,7 @@
 				<classSpec ident="att.global.rendition" type="atts" mode="change" module="tei">
 					<attList>
 						<attDef ident="rend" mode="change">
-							<valList type="closed" mode="replace">
+							<valList type="open" mode="replace">
 								<valItem ident="italic"/>
 								<valItem ident="underline"/>
 								<valItem ident="bold"/>
