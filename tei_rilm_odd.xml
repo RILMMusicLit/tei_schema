@@ -472,7 +472,7 @@
 								version of a document.</desc>
 							<valList type="closed">
 								<valItem ident="active" />
-								<valItem ident=" inactive" />
+								<valItem ident="inactive" />
 							</valList>
 						</attDef>
 					</attList>
@@ -1901,8 +1901,8 @@
 								<valItem ident="festival" />
 								<valItem ident="performing" />
 								<valItem ident="uni" />
-								<valItem ident=" performing-alt" />
-								<valItem ident=" uni-alt" />
+								<valItem ident="performing-alt" />
+								<valItem ident="uni-alt" />
 							</valList>
 						</attDef>
 					</attList>

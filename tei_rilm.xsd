@@ -3,11 +3,11 @@
   <xs:import namespace="http://www.isocat.org/ns/dcr" schemaLocation="dcr.xsd"/>
   <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
   <!--
-    Schema generated from ODD source 2016-02-01T19:25:39Z. .
+    Schema generated from ODD source 2016-02-10T17:05:44Z. .
     TEI Edition: Version 2.9.1. Last updated on
     	15th October 2015, revision 46ac023
     TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 2.9.1/
-    RILM TEI Version 1.1.1
+    
   -->
   <!---->
   <xs:complexType name="rilmteimacro.paraContent" mixed="true">
@@ -4457,7 +4457,7 @@ Sample values include: 1] authors; 2] bio; 3] contents; 4] criticism; 5] heading
             <xs:simpleType>
               <xs:restriction base="xs:token">
                 <xs:enumeration value="active"/>
-                <xs:enumeration value=" inactive"/>
+                <xs:enumeration value="inactive"/>
               </xs:restriction>
             </xs:simpleType>
           </xs:attribute>
@@ -5021,8 +5021,8 @@ Mathematical Expressions]</xs:documentation>
                 <xs:enumeration value="festival"/>
                 <xs:enumeration value="performing"/>
                 <xs:enumeration value="uni"/>
-                <xs:enumeration value=" performing-alt"/>
-                <xs:enumeration value=" uni-alt"/>
+                <xs:enumeration value="performing-alt"/>
+                <xs:enumeration value="uni-alt"/>
               </xs:restriction>
             </xs:simpleType>
           </xs:attribute>
