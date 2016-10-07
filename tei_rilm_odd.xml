@@ -377,8 +377,6 @@
 								<valItem ident="ography" />
 								<valItem ident="section" />
 								<valItem ident="one-section" />
-								<valItem ident="unlicenced-article" />
-								<valItem ident="unlicenced-section" />
 								<valItem ident="works" />
 							</valList>
 						</attDef>
