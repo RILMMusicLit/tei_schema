@@ -4901,6 +4901,7 @@ Sample values include: 1] authors; 2] bio; 3] contents; 4] criticism; 5] heading
               <xs:restriction base="xs:token">
                 <xs:enumeration value="active"/>
                 <xs:enumeration value="inactive"/>
+                <xs:enumeration value="deceased"/>
               </xs:restriction>
             </xs:simpleType>
           </xs:attribute>
