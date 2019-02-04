@@ -4336,6 +4336,7 @@ Sample values include: 1] compiler; 2] illustrator; 3] translator; 4] arranger</
                 <xs:enumeration value="incipit"/>
                 <xs:enumeration value="generic"/>
                 <xs:enumeration value="monograph"/>
+                <xs:enumeration value="nonroman"/>
                 <xs:enumeration value="periodical"/>
                 <xs:enumeration value="review"/>
                 <xs:enumeration value="translated"/>
@@ -4762,6 +4763,7 @@ Sample values include: 1] compiler; 2] illustrator; 3] translator; 4] arranger</
             <xs:enumeration value="work"/>
             <xs:enumeration value="group"/>
             <xs:enumeration value="generic"/>
+            <xs:enumeration value="abstract"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:attribute>
