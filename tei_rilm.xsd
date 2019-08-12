@@ -4339,6 +4339,7 @@ Sample values include: 1] compiler; 2] illustrator; 3] translator; 4] arranger</
                 <xs:enumeration value="nonroman"/>
                 <xs:enumeration value="periodical"/>
                 <xs:enumeration value="review"/>
+                <xs:enumeration value="title_entry"/>
                 <xs:enumeration value="translated"/>
                 <xs:enumeration value="website"/>
                 <xs:enumeration value="work"/>
