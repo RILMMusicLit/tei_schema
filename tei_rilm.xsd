@@ -4758,6 +4758,7 @@ Sample values include: 1] compiler; 2] illustrator; 3] translator; 4] arranger</
             <xs:enumeration value="topic"/>
             <xs:enumeration value="matter"/>
             <xs:enumeration value="geo"/>
+            <xs:enumeration value="geographic"/>
             <xs:enumeration value="institution"/>
             <xs:enumeration value="genre"/>
             <xs:enumeration value="instrument"/>
