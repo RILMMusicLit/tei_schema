@@ -3,8 +3,8 @@
   <xs:import namespace="http://www.isocat.org/ns/dcr" schemaLocation="dcr.xsd"/>
   <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
   <!--
-    Schema generated from ODD source 2017-07-27T15:30:37Z. .
-    TEI Edition: Version 3.2.0. Last updated on
+    
+TEI Edition: Version 3.2.0. Last updated on
     	10th July 2017, revision 0fcf651
     TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.2.0/
     
@@ -4339,6 +4339,7 @@ Sample values include: 1] compiler; 2] illustrator; 3] translator; 4] arranger</
                 <xs:enumeration value="nonroman"/>
                 <xs:enumeration value="periodical"/>
                 <xs:enumeration value="review"/>
+                <xs:enumeration value="sub"/>
                 <xs:enumeration value="title_entry"/>
                 <xs:enumeration value="translated"/>
                 <xs:enumeration value="website"/>
