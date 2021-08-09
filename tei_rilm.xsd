@@ -8334,6 +8334,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</xs:documentation>
       <xs:documentation>Contains the name of a musical note without reference to a particular octave or pitch.</xs:documentation>
     </xs:annotation>
     <xs:complexType mixed="true">
+      <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:rilmteimodel.gLike"/>
       <xs:attributeGroup ref="tei:rilmteiatt.global.attributes"/>
       <xs:attributeGroup ref="tei:rilmteiatt.typed.attributes"/>
     </xs:complexType>
