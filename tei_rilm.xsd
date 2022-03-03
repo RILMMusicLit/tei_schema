@@ -76,31 +76,43 @@ TEI Edition: Version 3.2.0. Last updated on
     </xs:attribute>
   </xs:attributeGroup>
   <xs:attributeGroup name="rilmteiatt.canonical.attributes">
-    <xs:attributeGroup ref="tei:rilmteiatt.canonical.attribute.key"/>
-    <xs:attributeGroup ref="tei:rilmteiatt.canonical.attribute.ref"/>
-  </xs:attributeGroup>
-  <xs:attributeGroup name="rilmteiatt.canonical.attribute.key">
-    <xs:attribute name="key" type="xs:string">
-      <xs:annotation>
-        <xs:documentation>provides an externally-defined means of identifying the entity (or entities) being named, using a coded value of some kind.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-  </xs:attributeGroup>
-  <xs:attributeGroup name="rilmteiatt.canonical.attribute.ref">
-    <xs:attribute name="ref">
-      <xs:annotation>
-        <xs:documentation>(reference) provides an explicit means of locating a full definition or identity for the entity being named by means of one or more URIs.</xs:documentation>
-      </xs:annotation>
-      <xs:simpleType>
-        <xs:restriction>
-          <xs:simpleType>
-            <xs:list itemType="xs:anyURI"/>
-          </xs:simpleType>
-          <xs:minLength value="1"/>
-        </xs:restriction>
-      </xs:simpleType>
-    </xs:attribute>
-  </xs:attributeGroup>
+          <xs:attributeGroup ref="tei:rilmteiatt.canonical.attribute.key"/>
+          <xs:attributeGroup ref="tei:rilmteiatt.canonical.attribute.ref"/>
+          <xs:attributeGroup ref="tei:rilmteiatt.canonical.attribute.topicID"/>
+     </xs:attributeGroup>
+     <xs:attributeGroup name="rilmteiatt.canonical.attribute.key">
+          <xs:attribute name="key" type="xs:string">
+               <xs:annotation>
+                    <xs:documentation>provides an externally-defined means of identifying the entity
+                         (or entities) being named, using a coded value of some
+                         kind.</xs:documentation>
+               </xs:annotation>
+          </xs:attribute>
+     </xs:attributeGroup>
+     <xs:attributeGroup name="rilmteiatt.canonical.attribute.ref">
+          <xs:attribute name="ref">
+               <xs:annotation>
+                    <xs:documentation>(reference) provides an explicit means of locating a full
+                         definition or identity for the entity being named by means of one or more
+                         URIs.</xs:documentation>
+               </xs:annotation>
+               <xs:simpleType>
+                    <xs:restriction>
+                         <xs:simpleType>
+                              <xs:list itemType="xs:anyURI"/>
+                         </xs:simpleType>
+                         <xs:minLength value="1"/>
+                    </xs:restriction>
+               </xs:simpleType>
+          </xs:attribute>
+     </xs:attributeGroup>
+     <xs:attributeGroup name="rilmteiatt.canonical.attribute.topicID">
+          <xs:attribute name="topicID" type="xs:string">
+               <xs:annotation>
+                    <xs:documentation>Identifies the entity (or entities) being named, using its "topic_id" in the RILM thesaurus.</xs:documentation>
+               </xs:annotation>
+          </xs:attribute>
+     </xs:attributeGroup>
   <xs:attributeGroup name="rilmteiatt.ranging.attributes">
     <xs:attributeGroup ref="tei:rilmteiatt.ranging.attribute.atLeast"/>
     <xs:attributeGroup ref="tei:rilmteiatt.ranging.attribute.atMost"/>
@@ -8302,24 +8314,26 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</xs:documentation>
     </xs:complexType>
   </xs:element>
   <xs:element name="rilmPerson">
-    <xs:annotation>
-      <xs:documentation>contains biographical information about a person. May contain a mix of text and elements.</xs:documentation>
-    </xs:annotation>
-    <xs:complexType mixed="true">
-      <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:group ref="tei:rilmteimodel.pLike"/>
-        <xs:group ref="tei:rilmteimodel.personPart"/>
-        <xs:group ref="tei:rilmteimodel.global"/>
-        <xs:group ref="tei:rilmteimodel.highlighted"/>
-        <xs:group ref="tei:rilmteimodel.quoteLike"/>
-        <xs:group ref="tei:rilmteimodel.labelLike"/>
-      </xs:choice>
-      <xs:attributeGroup ref="tei:rilmteiatt.editLike.attributes"/>
-      <xs:attributeGroup ref="tei:rilmteiatt.global.attributes"/>
-      <xs:attributeGroup ref="tei:rilmteiatt.naming.attributes"/>
-      <xs:attributeGroup ref="tei:rilmteiatt.sortable.attributes"/>
-    </xs:complexType>
-  </xs:element>
+          <xs:annotation>
+               <xs:documentation>contains biographical information about a person. May contain a mix
+                    of text and elements.</xs:documentation>
+          </xs:annotation>
+          <xs:complexType mixed="true">
+               <xs:choice maxOccurs="unbounded" minOccurs="0">
+                    <xs:group ref="tei:rilmteimodel.pLike"/>
+                    <xs:group ref="tei:rilmteimodel.personPart"/>
+                    <xs:group ref="tei:rilmteimodel.global"/>
+                    <xs:group ref="tei:rilmteimodel.highlighted"/>
+                    <xs:group ref="tei:rilmteimodel.quoteLike"/>
+                    <xs:group ref="tei:rilmteimodel.labelLike"/>
+               </xs:choice>
+               <xs:attributeGroup ref="tei:rilmteiatt.editLike.attributes"/>
+               <xs:attributeGroup ref="tei:rilmteiatt.canonical.attributes"/>
+               <xs:attributeGroup ref="tei:rilmteiatt.global.attributes"/>
+               <xs:attributeGroup ref="tei:rilmteiatt.naming.attributes"/>
+               <xs:attributeGroup ref="tei:rilmteiatt.sortable.attributes"/>
+          </xs:complexType>
+     </xs:element>
   <xs:element name="pitch">
     <xs:annotation>
       <xs:documentation>Contains the name of a pitch in scientific pitch notation, Helmholtz pitch notation, or any other system.</xs:documentation>
