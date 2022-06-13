@@ -1,0 +1,7 @@
+{
+	"rootSchemas": {
+		"tei_rilm.xsd": {
+			"packageName": "rilm-schema-experience"
+		}
+	}
+}
