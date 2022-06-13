@@ -8328,7 +8328,6 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</xs:documentation>
                     <xs:group ref="tei:rilmteimodel.labelLike"/>
                </xs:choice>
                <xs:attributeGroup ref="tei:rilmteiatt.editLike.attributes"/>
-               <xs:attributeGroup ref="tei:rilmteiatt.canonical.attributes"/>
                <xs:attributeGroup ref="tei:rilmteiatt.global.attributes"/>
                <xs:attributeGroup ref="tei:rilmteiatt.naming.attributes"/>
                <xs:attributeGroup ref="tei:rilmteiatt.sortable.attributes"/>
