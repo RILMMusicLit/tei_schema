@@ -3,6 +3,7 @@
     "private": true,
     "version": "1.0.0",
     "description": "rilm tei schema",
+    "main": "tei_rilm.xsd",
     "dependencies": {},
     "author": "RILM <info@rilm.org> (http://www.rilm.org)",
     "license": "SEE LICENCE IN README.md"
