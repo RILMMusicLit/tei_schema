@@ -1,0 +1,9 @@
+{
+    "name": "tei_schema",
+    "private": true,
+    "version": "1.0.0",
+    "description": "rilm tei schema",
+    "dependencies": {},
+    "author": "RILM <info@rilm.org> (http://www.rilm.org)",
+    "license": "SEE LICENCE IN README.md"
+}
