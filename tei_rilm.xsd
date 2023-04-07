@@ -717,6 +717,7 @@ Sample values include: 1] italic; 2] underline; 3] bold; 4] uppercase; 5] sup; 6
     <xs:attributeGroup ref="tei:rilmteiatt.global.source.attributes"/>
     <xs:attributeGroup ref="tei:rilmteiatt.global.attribute.xmlid"/>
     <xs:attributeGroup ref="tei:rilmteiatt.global.attribute.n"/>
+    <xs:attributeGroup ref="tei:rilmteiatt.global.attribute.protected"/>
     <xs:attributeGroup ref="tei:rilmteiatt.global.attribute.xmllang"/>
     <xs:attributeGroup ref="tei:rilmteiatt.global.attribute.xmlbase"/>
     <xs:attributeGroup ref="tei:rilmteiatt.global.attribute.xmlspace"/>
@@ -731,6 +732,9 @@ Sample values include: 1] italic; 2] underline; 3] bold; 4] uppercase; 5] sup; 6
       </xs:annotation>
     </xs:attribute>
   </xs:attributeGroup>
+  <xs:attributeGroup name="rilmteiatt.global.attribute.protected">
+          <xs:attribute name="protected" type="xs:string"/>
+     </xs:attributeGroup>
   <xs:attributeGroup name="rilmteiatt.global.attribute.xmllang">
     <xs:attribute ref="xml:lang"/>
   </xs:attributeGroup>
