@@ -4770,20 +4770,23 @@ Sample values include: 1] compiler; 2] illustrator; 3] translator; 4] arranger</
         </xs:annotation>
         <xs:simpleType>
           <xs:restriction base="xs:token">
+            <xs:enumeration value="abstract"/>
             <xs:enumeration value="corporate"/>
+            <xs:enumeration value="dance"/>
             <xs:enumeration value="family"/>
-            <xs:enumeration value="person"/>
-            <xs:enumeration value="topic"/>
-            <xs:enumeration value="matter"/>
+            <xs:enumeration value="generic"/>
+            <xs:enumeration value="genre"/>
             <xs:enumeration value="geo"/>
             <xs:enumeration value="geographic"/>
-            <xs:enumeration value="institution"/>
-            <xs:enumeration value="genre"/>
-            <xs:enumeration value="instrument"/>
-            <xs:enumeration value="work"/>
             <xs:enumeration value="group"/>
-            <xs:enumeration value="generic"/>
-            <xs:enumeration value="abstract"/>
+            <xs:enumeration value="institution"/>
+            <xs:enumeration value="instrument"/>
+            <xs:enumeration value="matter"/>
+            <xs:enumeration value="person"/>
+            <xs:enumeration value="register"/>
+            <xs:enumeration value="topic"/>
+            <xs:enumeration value="work"/>
+
           </xs:restriction>
         </xs:simpleType>
       </xs:attribute>
