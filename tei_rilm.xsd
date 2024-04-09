@@ -60,7 +60,7 @@ TEI Edition: Version 3.2.0. Last updated on
   <xs:attributeGroup name="rilmteiatt.ascribed.attributes">
     <xs:attributeGroup ref="tei:rilmteiatt.ascribed.attribute.who"/>
   </xs:attributeGroup>
-  <xs:attributeGroup name="rilmteiatt.ascribed.attribute.who">
+<xs:attributeGroup name="rilmteiatt.ascribed.attribute.who">
     <xs:attribute name="who">
       <xs:annotation>
         <xs:documentation>indicates the person, or group of people, to whom the element content is ascribed.</xs:documentation>
@@ -74,6 +74,19 @@ TEI Edition: Version 3.2.0. Last updated on
         </xs:restriction>
       </xs:simpleType>
     </xs:attribute>
+       <xs:attribute name="role">
+            <xs:annotation>
+                 <xs:documentation>indicates the capacity in which the person produced the content.</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                 <xs:restriction>
+                      <xs:simpleType>
+                           <xs:list itemType="xs:anyURI"/>
+                      </xs:simpleType>
+                      <xs:minLength value="1"/>
+                 </xs:restriction>
+            </xs:simpleType>
+       </xs:attribute>
   </xs:attributeGroup>
   <xs:attributeGroup name="rilmteiatt.canonical.attributes">
           <xs:attributeGroup ref="tei:rilmteiatt.canonical.attribute.key"/>
