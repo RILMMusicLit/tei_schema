@@ -4977,6 +4977,7 @@ Sample values include: 1] compiler; 2] illustrator; 3] translator; 4] arranger</
       <xs:attributeGroup ref="tei:rilmteiatt.global.attribute.n"/>
       <xs:attributeGroup ref="tei:rilmteiatt.global.attribute.protected"/>
       <xs:attributeGroup ref="tei:rilmteiatt.global.attribute.xmllang"/>
+      <xs:attributeGroup ref="tei:rilmteiatt.global.linking.attributes"/>
       <xs:attributeGroup ref="tei:rilmteiatt.global.responsibility.attribute.cert"/>
       <xs:attributeGroup ref="tei:rilmteiatt.global.responsibility.attribute.resp"/>
       <xs:attributeGroup ref="tei:rilmteiatt.global.source.attribute.source"/>
